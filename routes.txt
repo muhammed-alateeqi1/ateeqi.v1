@@ -1,0 +1,9 @@
+/
+/projects
+/projects/cyber50-dashboard
+/projects/freshcart-ecommerce
+/projects/ai-plant-disease-detection
+/projects/coming-soon-1
+/projects/coming-soon-2
+/about
+/contact

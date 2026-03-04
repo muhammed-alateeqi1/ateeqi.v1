@@ -1,0 +1,47 @@
+
+    <!-- Navigation -->
+    <header class="navbar" role="banner">
+      <nav class="navbar__inner" aria-label="Main navigation">
+        <!-- Logo / wordmark -->
+        <a routerLink="/" class="navbar__logo" aria-label="Home — Muhammed Al-Ateeqi">
+          M.Ateeqi
+        </a>
+
+        <!-- Nav links -->
+        <ul class="navbar__links" role="list">
+          <li>
+            <a
+              routerLink="/projects"
+              routerLinkActive="navbar__link--active"
+              class="navbar__link"
+            >Projects</a>
+          </li>
+          <li>
+            <a
+              routerLink="/about"
+              routerLinkActive="navbar__link--active"
+              class="navbar__link"
+            >About</a>
+          </li>
+          <li>
+            <a
+              routerLink="/contact"
+              routerLinkActive="navbar__link--active"
+              class="navbar__link"
+            >Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content" tabindex="-1">
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <p class="footer__text">
+        &copy; {{ year }} Muhammed Al-Ateeqi. Crafted with Angular.
+      </p>
+    </footer>

@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "cyber50-dashboard",
+    "title": "Cyber50 Dashboard",
+    "shortDescription": "A comprehensive cybersecurity analytics dashboard with real-time data visualization.",
+    "description": "Cyber50 Dashboard is a full-featured analytics platform built for cybersecurity professionals. It features real-time threat monitoring, interactive D3.js charts, RxJS-powered reactive data streams, and a clean modular Angular architecture. The dashboard supports multiple user roles and provides deep insights into network activity and threat vectors.",
+    "coverImage": "/assets/images/cyber50-cover.jpg",
+    "images": [
+      "/assets/images/cyber50-cover.jpg",
+      "/assets/images/cyber50-2.jpg",
+      "/assets/images/cyber50-3.jpg"
+    ],
+    "techStack": ["Angular 17", "D3.js", "Tailwind CSS", "RxJS"],
+    "demoUrl": "https://cyber50.example.com",
+    "githubUrl": "https://github.com/muhammed-ateeqi/cyber50-dashboard",
+    "comingSoon": false
+  },
+  {
+    "slug": "freshcart-ecommerce",
+    "title": "FreshCart E-Commerce",
+    "shortDescription": "A full-featured e-commerce platform with JWT authentication and REST API integration.",
+    "description": "FreshCart is a modern e-commerce web application built with Angular 17. It features a fully functional product catalog, shopping cart, checkout flow, and user authentication via JWT tokens. The app integrates with a RESTful API backend and implements interceptors for token management, route guards for protected pages, and a responsive UI built with Tailwind CSS.",
+    "coverImage": "/assets/images/freshcart-cover.jpg",
+    "images": [
+      "/assets/images/freshcart-cover.jpg",
+      "/assets/images/freshcart-2.jpg",
+      "/assets/images/freshcart-3.jpg"
+    ],
+    "techStack": ["Angular 17", "Tailwind CSS", "REST API", "JWT"],
+    "demoUrl": "https://freshcart.example.com",
+    "githubUrl": "https://github.com/muhammed-ateeqi/freshcart",
+    "comingSoon": false
+  },
+  {
+    "slug": "ai-plant-disease-detection",
+    "title": "AI Plant Disease Detection",
+    "shortDescription": "A machine learning application for detecting plant diseases from leaf images using CNN.",
+    "description": "An end-to-end deep learning application that identifies plant diseases from uploaded leaf images. The model is a Convolutional Neural Network trained on the PlantVillage dataset using TensorFlow/Keras, achieving high accuracy across multiple disease classes. The frontend is built with Streamlit, providing an intuitive interface for agricultural professionals and researchers.",
+    "coverImage": "/assets/images/ai-plant-cover.jpg",
+    "images": [
+      "/assets/images/ai-plant-cover.jpg",
+      "/assets/images/ai-plant-2.jpg"
+    ],
+    "techStack": ["CNN", "TensorFlow", "Keras", "Streamlit", "Python"],
+    "demoUrl": "https://huggingface.co/spaces/muhammed-ateeqi/plant-disease",
+    "githubUrl": "https://github.com/muhammed-ateeqi/plant-disease-detection",
+    "comingSoon": false
+  },
+  {
+    "slug": "coming-soon-1",
+    "title": "Coming Soon",
+    "shortDescription": "An exciting new project currently in development. Stay tuned.",
+    "description": "This project is currently in development. Details will be available soon.",
+    "coverImage": "/assets/images/coming-soon.jpg",
+    "images": ["/assets/images/coming-soon.jpg"],
+    "techStack": [],
+    "demoUrl": "",
+    "githubUrl": "",
+    "comingSoon": true
+  },
+  {
+    "slug": "coming-soon-2",
+    "title": "Coming Soon",
+    "shortDescription": "Another exciting project in the pipeline. More details coming shortly.",
+    "description": "This project is currently in development. Details will be available soon.",
+    "coverImage": "/assets/images/coming-soon.jpg",
+    "images": ["/assets/images/coming-soon.jpg"],
+    "techStack": [],
+    "demoUrl": "",
+    "githubUrl": "",
+    "comingSoon": true
+  }
+]

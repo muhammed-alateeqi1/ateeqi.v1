@@ -1,0 +1,63 @@
+ <section class="hero" aria-label="Introduction">
+      <!-- 1. Profile photo background -->
+      <div
+        class="hero__bg"
+        [style.background-image]="'url(/assets/images/profile.jpg)'"
+        aria-hidden="true"
+      ></div>
+
+      <!-- 2. Dark overlay -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- 3. Three.js canvas layer -->
+      <canvas
+        #threeCanvas
+        class="hero__canvas"
+        aria-hidden="true"
+      ></canvas>
+
+      <!-- 4. Content -->
+      <div class="hero__content" @fadeSlideIn>
+        <p class="hero__eyebrow">Hello, I'm</p>
+        <h1 class="hero__name">Muhammed Al-Ateeqi</h1>
+        <h2 class="hero__title">Frontend Angular Developer</h2>
+        <p class="hero__bio">
+          I design and build high-performance web applications with Angular —
+          turning complex requirements into clean, scalable, and accessible interfaces.
+          Focused on precision engineering, intuitive UX, and maintainable architecture.
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="hero__actions">
+          <!-- Projects button with floating preview -->
+          <div
+            class="projects-trigger"
+            (mouseenter)="onProjectsHover(true)"
+            (mouseleave)="onProjectsHover(false)"
+            (click)="onProjectsClick()"
+          >
+            <app-button
+              variant="primary"
+              ariaLabel="View my projects"
+            >
+              Projects
+            </app-button>
+
+            <!-- Floating preview (desktop hover / mobile click) -->
+            <app-floating-preview
+              *ngIf="showPreview"
+              [projects]="allProjects"
+            ></app-floating-preview>
+          </div>
+
+          <!-- Contact button -->
+          <app-button
+            variant="ghost"
+            ariaLabel="Go to contact page"
+            (clicked)="router.navigate(['/contact'])"
+          >
+            Contact
+          </app-button>
+        </div>
+      </div>
+    </section>

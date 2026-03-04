@@ -1,0 +1,101 @@
+   
+ .hero {
+      position: relative;
+      width: 100%;
+      height: 100dvh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Profile photo background */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      filter: saturate(0.3) brightness(0.55);
+      transform: scale(1.04);
+    }
+
+    /* Gradient overlay — dark from bottom */
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(24, 27, 52, 0.65) 0%,
+        rgba(24, 27, 52, 0.82) 60%,
+        rgba(24, 27, 52, 0.97) 100%
+      );
+    }
+
+    /* Three.js canvas */
+    .hero__canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Content */
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero__eyebrow {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .hero__name {
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 0 0 0.5rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero__title {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 400;
+      color: var(--color-text-muted);
+      margin: 0 0 1.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .hero__bio {
+      font-size: 0.9375rem;
+      color: rgba(234, 234, 240, 0.65);
+      line-height: 1.7;
+      margin: 0 0 2.5rem;
+      max-width: 540px;
+      margin-inline: auto;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Wrapper for projects button + floating preview */
+    .projects-trigger {
+      position: relative;
+      display: inline-flex;
+    }
