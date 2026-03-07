@@ -1,0 +1,37 @@
+<section class="about" @fadeSlideIn aria-labelledby="about-heading">
+    <div class="container">
+        <header class="section-header">
+            <p class="section-eyebrow">Who I Am</p>
+            <h1 id="about-heading" class="section-title">About Me</h1>
+        </header>
+
+        <div class="about__grid">
+            <!-- Photo -->
+            <div class="about__photo-wrap">
+                <img src="/assets/images/profile.jpg" alt="Muhammed Al-Ateeqi" class="about__photo" width="400" height="480" loading="lazy" />
+            </div>
+
+            <!-- Bio -->
+            <div class="about__bio">
+                <p>
+                    I'm
+                    <strong>Muhammed Al-Ateeqi</strong>
+                    , a Frontend Angular Developer with a passion for building clean, performant, and accessible web applications. I specialise in Angular architecture, reactive
+                    programming with RxJS, and delivering polished user interfaces.
+                </p>
+                <p>
+                    I believe great software emerges from the intersection of sharp engineering and thoughtful design. I take pride in code that is modular, readable, and built to
+                    last.
+                </p>
+
+                <!-- Skills -->
+                <div class="about__skills">
+                    <h2 class="skills__heading">Core Skills</h2>
+                    <div class="skills__grid">
+                        <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

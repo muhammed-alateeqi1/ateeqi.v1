@@ -1,13 +1,4 @@
-import {
-    Component,
-    ElementRef,
-    OnInit,
-    OnDestroy,
-    ViewChild,
-    AfterViewInit,
-    inject,
-    PLATFORM_ID,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, OnDestroy, ViewChild, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
@@ -55,7 +46,7 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     private readonly seo = inject(SeoService);
 
     constructor() {
-        this.projectService.getAll().subscribe(projects => {
+        this.projectService.getAll().subscribe((projects) => {
             this.allProjects = projects;
         });
     }
@@ -102,30 +93,77 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
             renderer.setSize(width, height, false);
             this.renderer = renderer;
+            // ------------------- Option (1)
+            // // Geometry — icosahedron wireframe
+            // const geo = new THREE.IcosahedronGeometry(1.4, 1);
+            // const mat = new THREE.MeshBasicMaterial({
+            //     color: 0x3d4470,
+            //     wireframe: true,
+            //     transparent: true,
+            //     opacity: 0.28,
+            // });
+            // const mesh = new THREE.Mesh(geo, mat);
+            // scene.add(mesh);
 
-            // Geometry — icosahedron wireframe
-            const geo = new THREE.IcosahedronGeometry(1.4, 1);
-            const mat = new THREE.MeshBasicMaterial({
-                color: 0x3d4470,
-                wireframe: true,
-                transparent: true,
-                opacity: 0.28,
-            });
+            // // Second smaller sphere for depth
+            // const geo2 = new THREE.IcosahedronGeometry(0.75, 1);
+            // const mat2 = new THREE.MeshBasicMaterial({
+            //     color: 0x4a5280,
+            //     wireframe: true,
+            //     transparent: true,
+            //     opacity: 0.18,
+            // });
+            // const mesh2 = new THREE.Mesh(geo2, mat2);
+            // mesh2.position.set(1.8, -0.8, -0.5);
+            // scene.add(mesh2);
+            // ------------------- Option (2)
+            const geo = new THREE.TorusKnotGeometry(1.1, 0.1, 256, 12, 3, 5);
+            const mat = new THREE.MeshBasicMaterial({ color: 0x5a6fe8, wireframe: true, transparent: true, opacity: 0.09 });
             const mesh = new THREE.Mesh(geo, mat);
             scene.add(mesh);
 
-            // Second smaller sphere for depth
-            const geo2 = new THREE.IcosahedronGeometry(0.75, 1);
-            const mat2 = new THREE.MeshBasicMaterial({
-                color: 0x4a5280,
-                wireframe: true,
-                transparent: true,
-                opacity: 0.18,
-            });
+            const geo2 = new THREE.TorusKnotGeometry(0.6, 0.06, 150, 10, 2, 3);
+            const mat2 = new THREE.MeshBasicMaterial({ color: 0x4a5280, wireframe: true, transparent: true, opacity: 0.1 });
             const mesh2 = new THREE.Mesh(geo2, mat2);
-            mesh2.position.set(1.8, -0.8, -0.5);
+            mesh2.position.set(1.7, -0.6, -0.3);
             scene.add(mesh2);
 
+            const geo3 = new THREE.TorusKnotGeometry(0.35, 0.04, 100, 8, 4, 7);
+            const mat3 = new THREE.MeshBasicMaterial({ color: 0x3d4470, wireframe: true, transparent: true, opacity: 0.03 });
+            const mesh3 = new THREE.Mesh(geo3, mat3);
+            mesh3.position.set(-1.4, 0.8, -0.5);
+            scene.add(mesh3);
+
+            // 👇 الإضافة الجديدة — ghost كبير في الخلف
+            const geo4 = new THREE.TorusKnotGeometry(2.2, 0.06, 300, 10, 3, 5);
+            const mat4 = new THREE.MeshBasicMaterial({ color: 0x5a6fe8, wireframe: true, transparent: true, opacity: 0.04 });
+            const mesh4 = new THREE.Mesh(geo4, mat4);
+            mesh4.rotation.x = Math.PI / 5;
+            scene.add(mesh4);
+
+            // ------------------- Option (3)
+            // const geo = new THREE.TorusKnotGeometry(1.1, 0.10, 256, 12, 3, 5);
+            // const mat = new THREE.MeshBasicMaterial({ color: 0x5a6fe8, wireframe: true, transparent: true, opacity: 0.10 });
+            // const mesh = new THREE.Mesh(geo, mat);
+            // scene.add(mesh);
+
+            // const geo2 = new THREE.TorusKnotGeometry(0.6, 0.06, 150, 10, 2, 3);
+            // const mat2 = new THREE.MeshBasicMaterial({ color: 0x4a5280, wireframe: true, transparent: true, opacity: 0.09 });
+            // const mesh2 = new THREE.Mesh(geo2, mat2);
+            // mesh2.position.set(1.7, -0.6, -0.3);
+            // scene.add(mesh2);
+
+            // const geo3 = new THREE.TorusKnotGeometry(0.35, 0.04, 100, 8, 4, 7);
+            // const mat3 = new THREE.MeshBasicMaterial({ color: 0x3d4470, wireframe: true, transparent: true, opacity: 0.08 });
+            // const mesh3 = new THREE.Mesh(geo3, mat3);
+            // mesh3.position.set(-1.4, 0.8, -0.5);
+            // scene.add(mesh3);
+
+            // // Ghost ضخم في الخلف
+            // const geo4 = new THREE.TorusKnotGeometry(2.0, 0.05, 280, 10, 5, 7);
+            // const mat4 = new THREE.MeshBasicMaterial({ color: 0x5a6fe8, wireframe: true, transparent: true, opacity: 0.03 });
+            // const mesh4 = new THREE.Mesh(geo4, mat4);
+            // scene.add(mesh4);
             // Handle resize
             const onResize = () => {
                 const w = canvas.clientWidth;
@@ -140,10 +178,14 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
             const animate = () => {
                 this.animationFrameId = requestAnimationFrame(animate);
                 // Very slow rotation — calm, executive
-                mesh.rotation.x += 0.0008;
-                mesh.rotation.y += 0.0012;
-                mesh2.rotation.x -= 0.0006;
+                mesh.rotation.x += 0.00008;
+                mesh.rotation.y += 0.00008;
+                mesh2.rotation.x -= 0.0009;
                 mesh2.rotation.y += 0.0009;
+                mesh3.rotation.x -= 0.0009;
+                mesh3.rotation.y += 0.0009;
+                mesh4.rotation.x -= 0.00015;
+                mesh4.rotation.y += 0.00015;
                 renderer.render(scene, camera);
             };
 
@@ -187,7 +229,9 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
             } else {
                 this.showPreview = true;
                 // Auto-dismiss preview after 4s on mobile
-                setTimeout(() => { this.showPreview = false; }, 4000);
+                setTimeout(() => {
+                    this.showPreview = false;
+                }, 4000);
             }
         } else {
             this.router.navigate(['/projects']);
