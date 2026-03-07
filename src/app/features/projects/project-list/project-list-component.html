@@ -1,0 +1,15 @@
+<section class="project-list" @fadeSlideIn aria-labelledby="projects-heading">
+    <div class="container">
+        <header class="section-header">
+            <p class="section-eyebrow">Portfolio</p>
+            <h1 id="projects-heading" class="section-title">Projects</h1>
+            <p class="section-subtitle">A selection of work — applications built with attention to performance, architecture, and user experience.</p>
+        </header>
+
+        <div class="projects-grid" role="list" aria-label="Projects">
+            <div *ngFor="let project of projects; trackBy: trackBySlug" role="listitem">
+                <app-project-card [project]="project"></app-project-card>
+            </div>
+        </div>
+    </div>
+</section>
