@@ -1,0 +1,68 @@
+ <div *ngIf="project; else notFound">
+      <section class="detail" @fadeSlideIn aria-labelledby="project-title">
+        <div class="container">
+
+          <!-- Back button -->
+          <a
+            routerLink="/projects"
+            class="back-link"
+            aria-label="Back to all projects"
+          >
+            ← Back to Projects
+          </a>
+
+          <!-- Header -->
+          <header class="detail__header">
+            <h1 id="project-title" class="detail__title">{{ project.title }}</h1>
+
+            <!-- Tech stack -->
+            <div class="detail__tags" aria-label="Technology stack">
+              <span class="tag" *ngFor="let tech of project.techStack">{{ tech }}</span>
+            </div>
+
+            <!-- External links -->
+            <div class="detail__links" *ngIf="!project.comingSoon">
+              <a
+                *ngIf="project.demoUrl"
+                [href]="project.demoUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-btn link-btn--primary"
+                [attr.aria-label]="'View live demo of ' + project.title"
+              >
+                Live Demo ↗
+              </a>
+              <a
+                *ngIf="project.githubUrl"
+                [href]="project.githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-btn link-btn--ghost"
+                [attr.aria-label]="'View ' + project.title + ' on GitHub'"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </header>
+
+          <!-- Image slider -->
+          <app-image-slider
+            *ngIf="project.images?.length"
+            [images]="project.images"
+          ></app-image-slider>
+
+          <!-- Description -->
+          <div class="detail__body">
+            <p class="detail__description">{{ project.description }}</p>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <ng-template #notFound>
+      <div class="not-found">
+        <p>Project not found.</p>
+        <a routerLink="/projects" class="back-link">← Back to Projects</a>
+      </div>
+    </ng-template>
