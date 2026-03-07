@@ -12,8 +12,14 @@ import { SeoService } from '../../core/seo/seo.service';
     selector: 'app-home',
     standalone: true,
     imports: [HeroComponent],
-    template: `<app-hero></app-hero>`,
-    styles: [`:host { display: block; }`],
+    templateUrl: './home.component.html',
+    styles: [
+        `
+            :host {
+                display: block;
+            }
+        `,
+    ],
 })
 export class HomeComponent implements OnInit {
     private readonly seo = inject(SeoService);
@@ -21,8 +27,7 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
         this.seo.update({
             title: 'Muhammed Al-Ateeqi | Frontend Angular Developer',
-            description:
-                'Personal portfolio of Muhammed Al-Ateeqi — a Frontend Angular Developer building high-performance, accessible web applications.',
+            description: 'Personal portfolio of Muhammed Al-Ateeqi — a Frontend Angular Developer building high-performance, accessible web applications.',
             keywords: 'Angular, Frontend Developer, Portfolio, Web Development',
         });
     }
