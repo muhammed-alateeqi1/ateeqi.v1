@@ -24,9 +24,7 @@ export class SeoService {
 
     update(data: SeoData): void {
         // Title
-        const fullTitle = data.title
-            ? `${data.title} | Muhammed Al-Ateeqi`
-            : this.siteName;
+        const fullTitle = data.title ? `${data.title} | Muhammed Al-Ateeqi` : this.siteName;
         this.title.setTitle(fullTitle);
 
         // Standard meta
