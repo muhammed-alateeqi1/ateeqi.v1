@@ -3,12 +3,19 @@
         "slug": "cyber50-dashboard",
         "title": "Cyber50 Dashboard",
         "shortDescription": "A comprehensive cybersecurity analytics dashboard with real-time data visualization.",
-        "description": "Cyber50 Dashboard is a full-featured analytics platform built for cybersecurity professionals. It features real-time threat monitoring, interactive D3.js charts, RxJS-powered reactive data streams, and a clean modular Angular architecture. The dashboard supports multiple user roles and provides deep insights into network activity and threat vectors.",
-        "coverImage": "/assets/images/cyber50-cover.jpg",
-        "images": ["/assets/images/1.jpeg", "/assets/images/cyber50-2.jpg", "/assets/images/cyber50-3.jpg"],
-        "techStack": ["Angular 17", "D3.js", "Tailwind CSS", "RxJS"],
-        "demoUrl": "https://cyber50.example.com",
-        "githubUrl": "https://github.com/muhammed-ateeqi/cyber50-dashboard",
+        "description": "Cyber50 is an interactive cyber security dashboard built with Angular 17 and D3.js to visualize cyber attack incidents through dynamic charts and geographic data. The application provides multiple analytical views including attack types, targeted countries, affected sectors, and global attack flows using interactive visualizations such as bar charts, pie charts, timelines, and a world map.It features a unified filtering system that allows real-time data exploration by date, country, severity, and attack type. The dashboard also includes CSV export, responsive design, and dark mode support.  Technologies used: Angular 17 (Standalone Components), D3.js v7, Tailwind CSS, with incident data served from GitHub Pages JSON endpoints.",
+        "coverImage": "/assets/images/cyber-dashboard/1.png",
+        "images": [
+            "/assets/images/cyber-dashboard/1.png",
+            "/assets/images/cyber-dashboard/2.png",
+            "/assets/images/cyber-dashboard/3.png",
+            "/assets/images/cyber-dashboard/4.png",
+            "/assets/images/cyber-dashboard/5.png",
+            "/assets/images/cyber-dashboard/6.png"
+        ],
+        "techStack": ["Angular 17", "D3.js", "Tailwind CSS", "RxJS", "JSON Server"],
+        "demoUrl": "https://cyber-50-defense-dashboard.vercel.app/landing",
+        "githubUrl": "https://github.com/muhammed-alateeqi1/cyber-50-defense-dashboard",
         "comingSoon": false
     },
     {
