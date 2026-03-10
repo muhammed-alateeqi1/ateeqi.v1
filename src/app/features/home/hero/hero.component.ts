@@ -178,8 +178,8 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
             const animate = () => {
                 this.animationFrameId = requestAnimationFrame(animate);
                 // Very slow rotation — calm, executive
-                mesh.rotation.x += 0.000539;
-                mesh.rotation.y += 0.000539;
+                mesh.rotation.x += 0.000239;
+                mesh.rotation.y += 0.000239;
                 mesh2.rotation.x -= 0.0009;
                 mesh2.rotation.y += 0.0009;
                 mesh3.rotation.x -= 0.0009;
