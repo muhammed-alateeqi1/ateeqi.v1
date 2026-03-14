@@ -43,7 +43,7 @@
         "slug": "ai-plant-disease-detection",
         "title": "AI Plant Disease Detection",
         "shortDescription": "A machine learning application for detecting plant diseases from leaf images using CNN.",
-        "description": "An end-to-end deep learning application that identifies plant diseases from uploaded leaf images. The model is a Convolutional Neural Network trained on the PlantVillage dataset using TensorFlow/Keras, achieving high accuracy across multiple disease classes. The frontend is built with Streamlit, providing an intuitive interface for agricultural professionals and researchers.",
+        "description": "Developed an AI-powered plant disease detection system as my graduation project, using Deep Learning and Computer Vision techniques. The system analyzes leaf images and accurately identifies the type of disease affecting the plant, helping farmers take timely action.\n\nBuilt a custom CNN model using TensorFlow & Keras, trained on the PlantVillage dataset with 70,295 images across 38 disease categories. The model achieved 99.2% training accuracy and 96.6% validation accuracy over 20 epochs.\n\nDeployed a user-friendly web application using Streamlit, allowing users to upload or capture plant images and receive instant diagnosis with confidence scores and treatment recommendations.\n\nTech Stack: Python · TensorFlow · Keras · CNN · NumPy · Matplotlib · Streamlit",
         "coverImage": "/assets/images/Graduation_Project/1.png",
         "images": [
             "/assets/images/Graduation_Project/1.png",
@@ -57,8 +57,8 @@
             "/assets/images/Graduation_Project/9.png"
         ],
         "techStack": ["CNN", "TensorFlow", "Keras", "Streamlit", "Python"],
-        "demoUrl": "https://huggingface.co/spaces/muhammed-ateeqi/plant-disease",
-        "githubUrl": "https://github.com/muhammed-ateeqi/plant-disease-detection",
+        "demoUrl": "https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset",
+        "githubUrl": "https://drive.google.com/file/d/10UMjvAQr5L7mnc2eTwQZGBbyE1SMYR5N/view?usp=sharing",
         "comingSoon": false
     },
     {
